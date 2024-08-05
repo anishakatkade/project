@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to do list</title>
+
+    <style>
+      h1 {
+        font-size: Poppins Bold;
+        color: #1e88e5;
+        background-color: #ffffff;
+        text-align: center;
+      }
+
+      .todo-container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        justify-items: center;
+        margin-left: 425px;
+        margin-top: 90px;
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+        font-size: 30px;
+        font-family: monospace;
+      }
+      .input-group {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      .input-group input {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 5px 5px 5px 5px;
+        outline: none;
+      }
+      .input-group button {
+        padding: 10px;
+        background-color: #1e88e5;
+        color: white;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        cursor: pointer;
+      }
+      .input-group button:hover {
+        background-color: #1565c0;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      ul li {
+        background-color: #f0f0f0;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Get Things Done !</h1>
+    </div>
+    <div class="todo-container">
+      <h2>My day</h2>
+      <div class="input-group">
+        <input type="text" id="todo-input" placeholder="Enter a new task" />
+        <button onclick="addTodo()">Add</button>
+      </div>
+
+      <ul id="todo-list"></ul>
+    </div>
+
+    <script>
+      function addTodo() {
+        var todoInput = document.getElementById("todo-input");
+        var todoList = document.getElementById("todo-list");
+
+        var newTodoText = todoInput.value.trim();
+        if (newTodoText !== "") {
+          var listItem = document.createElement("li");
+          listItem.textContent = newTodoText;
+          todoList.appendChild(listItem);
+          todoInput.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
